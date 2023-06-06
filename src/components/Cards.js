@@ -1,12 +1,14 @@
 import '../css/App.css';
 import { useState, useEffect } from "react";
 import axios from 'axios';
+import { BsArrowRight } from 'react-icons/bs';
+
 
 function Cards() {
   const [cards, setcards] = useState([])
 
-  useEffect( () => {
-    async function getAllCards()  {
+  useEffect(() => {
+    async function getAllCards() {
       try {
         const cards = await axios.get("http://127.0.0.1:8000/api/cards/")
         //console.log(cards.data)
@@ -19,20 +21,24 @@ function Cards() {
   }, [])
 
   return (
-    <div className="OurCard container">
-      <h1>Our Cards</h1>
+    <section className="OurCard container">
+      <h1 className='border-bottom'>Our Cards</h1>
+      <div className="row p-5 row-cols-1 row-cols-lg-2">
       {
-        cards.map((card) =>{
+        cards.map((card) => {
           return (
-            <div key={card.id}>
-              <i className={ card.icon }></i>
-              <h6>{ card.title }</h6>
-              <p>{ card.description }</p>
-            </div>
+            <a key={card.id} href="" className="col-md-6 rounded-0 p-3 card text-decoration-none csCard" >
+              <span className="mb-4 text-muted rtyu">{ card.title}</span>
+              <p className="mb-5">
+                <span className="w-75">{ card.description}</span>
+              </p>
+              <i className="text-primary">< BsArrowRight /></i>
+            </a>
           )
         })
       }
-    </div>
+      </div>
+    </section>
   );
 }
 

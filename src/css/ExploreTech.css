@@ -1,0 +1,86 @@
+/* exporeTech techCards */
+section.ExploreTech {
+  display: flex;
+  flex-direction: column;
+  gap:2vw;
+  height:min-content;
+}
+.ExploreTech h1 {
+  margin-bottom: 1vw;
+  font-weight: 100;
+}
+section.ExploreTech #techCards {
+  display:flex;
+  flex-wrap: wrap;
+  gap:0.5vw;
+  padding:0 2vw;
+}
+.ExploreTech .tCards {
+  width: calc(50% - 0.55vw);
+  background-color: hsl(0, 0%, 90%);
+}
+.ExploreTech .tCards .tContent {
+  background-color: hsl(0, 0%, 90%);
+  width:200%;
+  display:none;
+  padding:1vw;
+  margin-top: 0.25vw;
+}
+.ExploreTech .tCards:nth-child(even) .tContent {
+  margin-left: calc(-100% - 0.25em);
+}
+.ExploreTech .tCards:hover .tContent {
+  background-color: hsl(0, 0%, 87.5%);
+}
+.ExploreTech .tCards:hover {
+  background-color: hsl(0, 0%, 87.5%);
+}
+.ExploreTech .tCards .tHead {
+  padding:1vw;
+}
+.ExploreTech .tCards .tHead .tIcons {
+  border:none;
+}
+.ExploreTech .tCards .tHead .tIcons i {
+  margin-bottom: 3vw;
+}
+.ExploreTech .tCards .tHead .tTexts {
+  display:inline-flex;
+  width:100%;
+  margin-top: 1vw;
+}
+.ExploreTech .tCards .tHead .tTexts i:nth-child(2),i:nth-child(3) {
+  margin-left: auto;
+}
+.ExploreTech .tCards .tHead .tTexts i:nth-child(3) {
+  display:none;
+}
+.tCards:not(:focus-within) {
+  height:max-content;
+}
+.tCards:not(:focus-within) .tContent {
+  display: none !important;
+}
+.tCards:focus-within .tContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap:0.25vw;
+}
+
+.ExploreTech .tCards .tContent .tcHead {
+  padding-bottom:2vw;
+  font-weight: 100 !important;
+  width:100% !important;
+}
+.ExploreTech .tCards .tContent .tcLinks {
+  margin-bottom: 1vw;
+  width: calc(50% - 0.25vw);
+  display:flex;
+  flex-direction:column;
+  gap:0.5vw;
+}
+.ExploreTech .tCards .tContent .tcLinks a {
+  color:#0077B5;
+  text-decoration: none;
+}
+/* End More ways */

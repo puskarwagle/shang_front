@@ -3,3 +3,7 @@
 .App {
   background-color: aliceblue;
 }
+h1 {
+  margin-bottom: 1vw;
+  font-weight: 100;
+}
