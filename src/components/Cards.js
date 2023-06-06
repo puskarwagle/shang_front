@@ -22,7 +22,6 @@ function Cards() {
 
   return (
     <section className="OurCard container">
-      <h1 className='border-bottom'>Our Cards</h1>
       <div className="row p-5 row-cols-1 row-cols-lg-2">
       {
         cards.map((card) => {

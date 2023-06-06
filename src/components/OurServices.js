@@ -20,7 +20,7 @@ function OurService() {
 
   return (
     <div className="OurService container">
-      <h1 className="pb-2 border-bottom">Hanging icons</h1>
+      <h1 className="pb-2">Our Services</h1>
       <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
       {
         services.map((service) => {

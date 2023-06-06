@@ -21,7 +21,7 @@ function RecentWorks() {
 
   return (
     <section className="RecentWorks container">
-      <h1>Our Recent Works</h1>
+      <h1 className="pb-2 mt-5">Our Recent Works</h1>
       <div class="honey">
       {
         recentWorks.map((recentWork) =>{

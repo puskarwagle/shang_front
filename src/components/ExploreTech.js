@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import '../css/App.css';
 import '../css/ExploreTech.css';
+import { TbReceiptTax } from 'react-icons/tb';
+import { FaAngleDown } from 'react-icons/fa';
+import { FaAngleUp } from 'react-icons/fa';
 
 function ExploreTechs() {
   const [exploreTechs, setExploreTechs] = useState([]);
@@ -26,13 +29,13 @@ function ExploreTechs() {
         return (
           <div className="tCards" tabindex="0" key={exploreTech.id}>
             <div className="tHead">
-              <div className="tIcons">
-                <i className=""></i>
+              <div className="tIcons mb-5">
+                <i className="">< TbReceiptTax /></i>
               </div>
               <div className="tTexts">
                 <span>{exploreTech.title}</span>
-                <i className="fas fa-angle-down"></i>
-                <i className="fas fa-angle-up"></i>
+                <i className="fas fa-angle-down">< FaAngleDown /></i>
+                <i className="fas fa-angle-up">< FaAngleUp /></i>
               </div>
             </div>
             <div className="tContent">

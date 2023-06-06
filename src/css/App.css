@@ -3,7 +3,16 @@
 .App {
   background-color: aliceblue;
 }
+main {
+  display: flex;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
 h1 {
-  margin-bottom: 1vw;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
   font-weight: 100;
 }

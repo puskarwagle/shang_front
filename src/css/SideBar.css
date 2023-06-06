@@ -1,0 +1,14 @@
+nav#navPanel {
+  position:relative !important;
+}
+#navPanel ul {
+  position:sticky !important;
+  top:9vw !important;
+  left:0;
+}
+#navPanel a:hover {
+  color: var(--p-black);
+}
+#navPanel .active {
+  border-left: 0.3vw solid royalblue !important;
+} 

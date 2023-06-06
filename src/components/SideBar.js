@@ -1,46 +1,68 @@
-import '../css/App.css';
-
-import { FaLaptop } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import '../css/SideBar.css';
 
 function SideBar() {
-  return (
-    <div className="SideBar bg-light">
-      <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style={{width: '280px'}}>
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
-            < FaLaptop />
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-            < FaLaptop />
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-            < FaLaptop />
-              Orders
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-            < FaLaptop />
-              Products
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-            < FaLaptop />
-              Customers
-            </a>
-          </li>
-        </ul>
+  const [currentSection, setCurrentSection] = useState('');
 
-      </div>
-    </div>
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section');
+      const headerHeight = document.querySelector('.Header').clientHeight;
+
+      let currentSectionId = '';
+      sections.forEach((section) => {
+        const sectionHeight = section.clientHeight;
+        const sectionTop = section.offsetTop - headerHeight;
+        if (window.pageYOffset >= sectionTop - sectionHeight) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      setCurrentSection(currentSectionId);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    const section = document.querySelector(sectionId);
+    const headerHeight = document.querySelector('header').clientHeight;
+    const sectionTop = section.offsetTop - headerHeight;
+    window.scrollTo({
+      top: sectionTop,
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <nav className="pe-5" id="navPanel">
+      <ul className="navbar-nav text-nowrap ms-2 mt-2">
+        <li className="nav-item">
+          <a
+            className={`nav-link border-start border-4 p-3 ${currentSection === 'recentWorks' ? 'active' : ''}`}
+            href="#recentWorks"
+            onClick={(e) => handleNavClick(e, '#recentWorks')}
+          >
+            Recent Works
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            className={`nav-link border-start border-4 p-3 ${currentSection === 'exploreTech' ? 'active' : ''}`}
+            href="#exploreTech"
+            onClick={(e) => handleNavClick(e, '#exploreTech')}
+          >
+            Explore Tech
+          </a>
+        </li>
+        {/* ...other menu items */}
+      </ul>
+    </nav>
   );
 }
 

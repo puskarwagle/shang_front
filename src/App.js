@@ -21,15 +21,19 @@ function App() {
       <Header />
       <About />
       <Cards/>
-      <OurClients/>
-      <SideBar/>
-      <OurService/>
-      <ExploreTech/>
-      <RecentWork/>
-      
-      {/* <Overview/> */}
-      {/* <HeaderServices/> */}
-      {/* <HeaderProducts/> */}
+      <main>
+        <SideBar/>
+        <article>
+          <OurClients/>
+          <OurService/>
+          <ExploreTech/>
+          <RecentWork/>
+          
+          {/* <Overview/> */}
+          {/* <HeaderServices/> */}
+          {/* <HeaderProducts/> */}
+        </article>
+      </main>
       <Footer/>
     </div>
   );
