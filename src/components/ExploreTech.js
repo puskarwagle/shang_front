@@ -22,7 +22,7 @@ function ExploreTechs() {
   }, []);
 
   return (
-    <section className="ExploreTech container">
+    <section id="exploreTech" className="ExploreTech container">
       <h1>Our ExploreTechs</h1>
       <div id="techCards">
       {exploreTechs.map((exploreTech) => {

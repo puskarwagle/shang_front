@@ -1,7 +1,7 @@
 // Custom css and bootstrap
 import './css/App.css';
 import 'bootstrap/dist/js/bootstrap.js';
-// Components
+
 import Header from './components/Header';
 import About from './components/About';
 import Cards from './components/Cards';
@@ -13,6 +13,7 @@ import OurClients from './components/OurClients';
 import Overview from './components/Overview';
 import HeaderServices from './components/HeaderServices';
 import HeaderProducts from './components/HeaderProducts';
+import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
 
 function App() {
@@ -24,14 +25,15 @@ function App() {
       <main>
         <SideBar/>
         <article>
-          <OurClients/>
           <OurService/>
           <ExploreTech/>
           <RecentWork/>
           
-          {/* <Overview/> */}
+          <Overview/>
           {/* <HeaderServices/> */}
           {/* <HeaderProducts/> */}
+          <OurClients/>
+          < ContactUs />
         </article>
       </main>
       <Footer/>

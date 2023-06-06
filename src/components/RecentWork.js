@@ -20,7 +20,7 @@ function RecentWorks() {
   }, [])
 
   return (
-    <section className="RecentWorks container">
+    <section id="recentWorks" className="RecentWorks container">
       <h1 className="pb-2 mt-5">Our Recent Works</h1>
       <div class="honey">
       {

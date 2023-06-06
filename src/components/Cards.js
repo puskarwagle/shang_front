@@ -22,7 +22,7 @@ function Cards() {
 
   return (
     <section className="OurCard container">
-      <div className="row p-5 row-cols-1 row-cols-lg-2">
+      <div className="row row-cols-1 row-cols-lg-2">
       {
         cards.map((card) => {
           return (

@@ -1,12 +1,12 @@
 // import React from 'react';
 import '../css/App.css';
-import shangVid from "../videos/sample.webm";
+import shangVid from "../shang_auth/public/videos/sample.webm";
 import poster from "../images/overview.jpg";
 import { HiArrowRight } from 'react-icons/hi';
 
 function About() {
   return (
-    <section id="about" className="p-4 row d-flex">
+    <section id="about" className="p-5 row d-flex">
       <div className="col-md-7 col-lg-6 col-xl-6 d-inline-flex flex-column mb-4">
         <span className="mb-5 display-6 pb-5">Working towards excellence in ensuring Digital Governance in Nepal.</span>
         <p className="mb-5 mt-5 pt-5" style={{fontSize: '1.5rem'}}>See how local governments are automated using software like DOT NET to deliver services more efficiently.

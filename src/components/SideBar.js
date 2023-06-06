@@ -31,7 +31,7 @@ function SideBar() {
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
     const section = document.querySelector(sectionId);
-    const headerHeight = document.querySelector('header').clientHeight;
+    const headerHeight = document.querySelector('.Header').clientHeight;
     const sectionTop = section.offsetTop - headerHeight;
     window.scrollTo({
       top: sectionTop,
@@ -42,6 +42,7 @@ function SideBar() {
   return (
     <nav className="pe-5" id="navPanel">
       <ul className="navbar-nav text-nowrap ms-2 mt-2">
+
         <li className="nav-item">
           <a
             className={`nav-link border-start border-4 p-3 ${currentSection === 'recentWorks' ? 'active' : ''}`}
@@ -58,6 +59,24 @@ function SideBar() {
             onClick={(e) => handleNavClick(e, '#exploreTech')}
           >
             Explore Tech
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            className={`nav-link border-start border-4 p-3 ${currentSection === 'overview' ? 'active' : ''}`}
+            href="#overview"
+            onClick={(e) => handleNavClick(e, '#overview')}
+          >
+            Overview
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            className={`nav-link border-start border-4 p-3 ${currentSection === 'ourClients' ? 'active' : ''}`}
+            href="#ourClients"
+            onClick={(e) => handleNavClick(e, '#ourClients')}
+          >
+            Our Clients
           </a>
         </li>
         {/* ...other menu items */}

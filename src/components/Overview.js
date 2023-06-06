@@ -1,13 +1,14 @@
 import '../css/App.css';
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import myImage from '../images/client1.png';
+import overviewImage from '../images/lapC.jpg';
+// import overviewImage from '../shang_auth/public/images/overview/${overview.imgsrc}';
 
 function Overviews() {
   const [overviews, setOverviews] = useState([])
 
-  useEffect( () => {
-    async function getAllOverviews()  {
+  useEffect(() => {
+    async function getAllOverviews() {
       try {
         const overviews = await axios.get("http://127.0.0.1:8000/api/overviews/")
         setOverviews(overviews.data)
@@ -19,24 +20,39 @@ function Overviews() {
   }, [])
 
   return (
-    <div className="Overviews container">
+    <section id="overview" className="Overviews container border">
       <h1>Overviews</h1>
+      <ul id="overview-list" class="mb-3 pe-5 d-flex list-unstyled border">
+        {
+          overviews.map((overview) => {
+            return (
+            <li>{overview.titleLi}</li>
+            )
+          })
+        }
+      </ul>
       {
-        overviews.map((overviews) =>{
+        overviews.map((overview) => {
           return (
-            <div key={overviews.id}>
-              <img src={ myImage } alt={ overviews.imgalt } width="100"/>
-              <h3 class="mb-4">titleLi: { overviews.titleLi }</h3><br/>
-              <span>imgalt: { overviews.imgalt }</span><br/>
-              <span>text1: { overviews.text1 }</span><br/>
-              <span class="mb-4">text2: { overviews.text2 }</span><br/>
-              <span>text3: { overviews.text3 }</span><br/>
-              <span>link: { overviews.link }</span>
+            <div class="inOverview d-flex" key={overview.id}>
+              <img
+                src={overviewImage}
+                alt={overview.imgalt}
+                className="col-md-6 img-fluid"
+                style={{ height: '5rem', width: '5rem' }}
+              />
+              <div class="col-md-6 inOverviewText d-flex flex-column pt-4 px-5">
+                <span>imgalt: {overview.imgalt}</span><br />
+                <a>link: {overview.link}</a>
+              </div>
+              {/* <span class="mb-4">text2: { overview.text2 }</span><br/>
+                <span>text3: { overview.text3 }</span><br/>
+                <span>text1: { overview.text1 }</span><br/> */}
             </div>
           )
         })
       }
-    </div>
+    </section>
   );
 }
 
