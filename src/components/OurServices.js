@@ -20,9 +20,9 @@ function OurService() {
   }, [])
 
   return (
-    <section id="ourservices" className="OurService container">
+    <section id="ourservices" className="OurService">
       <h1>Our Services</h1>
-      <div className="row g-4 row-cols-1 row-cols-lg-3">
+      <div className="row g-4 row-cols-1 px-2 row-cols-lg-3">
       {
         services.map((service) => {
           return (
