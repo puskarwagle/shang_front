@@ -2,11 +2,9 @@
 section.ExploreTech {
   display: flex;
   flex-direction: column;
-  gap:2vw;
   height:min-content;
 }
 .ExploreTech h1 {
-  margin-bottom: 1vw;
   font-weight: 100;
 }
 section.ExploreTech #techCards {

@@ -1,4 +1,5 @@
 import '../css/App.css';
+import React from 'react';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { BsArrowRight } from 'react-icons/bs';
@@ -26,7 +27,9 @@ function Cards() {
       {
         cards.map((card) => {
           return (
-            <a key={card.id} href="" className="col-md-6 rounded-0 p-3 card text-decoration-none csCard" >
+            <a href="/about" key={card.id} 
+            style={{background: 'rgba(0, 0, 0, 0.1)', border: '1px solid white'}} 
+            className="col-md-6 rounded-0 p-3 card text-decoration-none csCard" >
               <span className="mb-4 text-muted rtyu">{ card.title}</span>
               <p className="mb-5">
                 <span className="w-75">{ card.description}</span>

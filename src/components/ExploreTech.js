@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import '../css/App.css';
@@ -22,12 +23,12 @@ function ExploreTechs() {
   }, []);
 
   return (
-    <section id="exploreTech" className="ExploreTech container">
+    <section id="exploreTech" className="ExploreTech">
       <h1>Our ExploreTechs</h1>
       <div id="techCards">
       {exploreTechs.map((exploreTech) => {
         return (
-          <div className="tCards" tabindex="0" key={exploreTech.id}>
+          <div className="tCards" tabIndex="0" key={exploreTech.id}>
             <div className="tHead">
               <div className="tIcons mb-5">
                 <i className="">< TbReceiptTax /></i>
@@ -44,7 +45,7 @@ function ExploreTechs() {
               </div>
               {exploreTech.links.map((link) => (
                 <div key={link.title} className="tcLinks">
-                  <a href="#">{link.title}</a>
+                  <a href="/about">{link.title}</a>
                   <span>{link.text}</span>
                 </div>
               ))}

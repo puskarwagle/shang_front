@@ -5,35 +5,32 @@ import { IoIosArrowDown } from 'react-icons/io';
 
 function Header() {
   return (
-    <nav className="Header navbar navbar-expand-sm px-4 border-bottom">
-      <a href="/" ><img className="me-4" src={shangLogo} alt="Shangrila G" height="25" /></a>
-      <ul className="navbar-nav border-start ps-4 list-unstyled">
-        <li>
-          <a className="active text-decoration-none text-reset p-3"  style={{fontSize: '1.3rem'}} href="/about">
-            <span className="text-muted">About</span>
-          </a>
-        </li>
-        <li>
-          <a className="text-decoration-none text-reset p-3"  style={{fontSize: '1.3rem'}} href="">
-            <span className="text-muted">Products</span> <i className="text-muted">< IoIosArrowDown /></i>
-          </a>
-        </li>
-        <li>
-          <a className="text-decoration-none text-reset p-3"  style={{fontSize: '1.3rem'}} href="">
-            <span className="text-muted">Services</span> <i className="text-muted">< IoIosArrowDown /></i>
-          </a>
-        </li>
-        <li>
-          <a className="text-decoration-none text-reset p-3"  style={{fontSize: '1.3rem'}} href="#recentWorks">
-            <span className="text-muted">Projects</span>
-          </a>
-        </li>
-        <li>
-          <a className="text-decoration-none text-reset p-3"  style={{fontSize: '1.3rem'}} href="#contact">
-            <span className="text-muted">Contact</span>
-          </a>
-        </li>
-      </ul>
+    <nav className="Header navbar navbar-expand-lg navbar-light bg-light px-3">
+      <a className="navbar-brand" href="#">
+        <img src={shangLogo} width="50" height="30" alt={'official shangrila logo'}></img>
+      </a>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav">
+          <li className="nav-item active">
+            <a className="nav-link" href="#">Home</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">About</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">Products <IoIosArrowDown/></a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">Service <IoIosArrowDown/></a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }

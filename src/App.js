@@ -1,4 +1,5 @@
 // Custom css and bootstrap
+import React from 'react';
 import './css/App.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
@@ -11,8 +12,8 @@ import ExploreTech from './components/ExploreTech';
 import RecentWork from './components/RecentWork';
 import OurClients from './components/OurClients';
 import Overview from './components/Overview';
-import HeaderServices from './components/HeaderServices';
-import HeaderProducts from './components/HeaderProducts';
+// import HeaderServices from './components/HeaderServices';
+// import HeaderProducts from './components/HeaderProducts';
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
 
@@ -22,17 +23,16 @@ function App() {
       <Header />
       <About />
       <Cards/>
-      <main>
+      <main >
         <SideBar/>
         <article>
           <OurService/>
           <ExploreTech/>
           <RecentWork/>
-          
-          <Overview/>
           {/* <HeaderServices/> */}
           {/* <HeaderProducts/> */}
           <OurClients/>
+          <Overview/>
           < ContactUs />
         </article>
       </main>

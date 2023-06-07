@@ -1,18 +1,45 @@
 @import 'bootstrap/dist/css/bootstrap.css';
-
+body {
+  background-color: aliceblue;
+  padding:0 0 0 0 !important;
+}
 .App {
   background-color: aliceblue;
 }
 main {
   display: flex;
+  margin-top: 2rem;
+  border:0px solid pink;
 }
 article {
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  width:100%;
+  padding:0 1rem;
+  overflow: hidden;
+  border:0px solid blue;
+}
+section {
+  margin-top:3rem;
+  width:100%;
 }
 h1 {
-  margin-bottom: 1rem;
-  margin-top: 4rem;
+  margin-bottom: 3rem;
   font-weight: 100;
+}
+
+
+
+@media (max-width: 560px) {
+  #contact {
+    min-width:100% !important;
+    border:0px solid blue;
+  }
+  #cMapForm{
+    border:0px solid red;
+  }
+  .gmap-sm {
+    border:0px solid red;
+    height:20rem !important;
+  }
 }

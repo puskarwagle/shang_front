@@ -1,4 +1,5 @@
 import '../css/App.css';
+import React from 'react';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { FaLaptop } from 'react-icons/fa';
@@ -19,9 +20,9 @@ function OurService() {
   }, [])
 
   return (
-    <div className="OurService container">
-      <h1 className="pb-2">Our Services</h1>
-      <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <section id="ourservices" className="OurService container">
+      <h1>Our Services</h1>
+      <div className="row g-4 row-cols-1 row-cols-lg-3">
       {
         services.map((service) => {
           return (
@@ -38,8 +39,8 @@ function OurService() {
           )
         })
       }
-    </div>
-    </div>
+      </div>
+    </section>
   );
 }
 

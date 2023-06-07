@@ -40,46 +40,69 @@ function SideBar() {
   };
 
   return (
-    <nav className="pe-5" id="navPanel">
+    <nav className="pe-5 d-none d-md-block" id="sideNavPanel">
       <ul className="navbar-nav text-nowrap ms-2 mt-2">
 
         <li className="nav-item">
           <a
-            className={`nav-link border-start border-4 p-3 ${currentSection === 'recentWorks' ? 'active' : ''}`}
-            href="#recentWorks"
-            onClick={(e) => handleNavClick(e, '#recentWorks')}
+            className={`nav-link p-4 ${currentSection === 'ourservices' ? 'active' : ''}`}
+            href="#ourservices"
+            onClick={(e) => handleNavClick(e, '#ourservices')}
           >
-            Recent Works
+            Our Services
           </a>
         </li>
+
         <li className="nav-item">
           <a
-            className={`nav-link border-start border-4 p-3 ${currentSection === 'exploreTech' ? 'active' : ''}`}
+            className={`nav-link border-start border-4 p-4 ${currentSection === 'exploreTech' ? 'active' : ''}`}
             href="#exploreTech"
             onClick={(e) => handleNavClick(e, '#exploreTech')}
           >
             Explore Tech
           </a>
         </li>
+
         <li className="nav-item">
           <a
-            className={`nav-link border-start border-4 p-3 ${currentSection === 'overview' ? 'active' : ''}`}
-            href="#overview"
-            onClick={(e) => handleNavClick(e, '#overview')}
+            className={`nav-link border-start border-4 p-4 ${currentSection === 'recentWorks' ? 'active' : ''}`}
+            href="#recentWorks"
+            onClick={(e) => handleNavClick(e, '#recentWorks')}
           >
-            Overview
+            Recent Works
           </a>
         </li>
+
         <li className="nav-item">
           <a
-            className={`nav-link border-start border-4 p-3 ${currentSection === 'ourClients' ? 'active' : ''}`}
+            className={`nav-link border-start border-4 p-4 ${currentSection === 'ourClients' ? 'active' : ''}`}
             href="#ourClients"
             onClick={(e) => handleNavClick(e, '#ourClients')}
           >
             Our Clients
           </a>
         </li>
-        {/* ...other menu items */}
+
+        <li className="nav-item">
+          <a
+            className={`nav-link border-start border-4 p-4 ${currentSection === 'overview' ? 'active' : ''}`}
+            href="#overview"
+            onClick={(e) => handleNavClick(e, '#overview')}
+          >
+            Overview
+          </a>
+        </li>
+
+        <li className="nav-item">
+          <a
+            className={`nav-link border-start border-4 p-4 ${currentSection === 'contact' ? 'active' : ''}`}
+            href="#contact"
+            onClick={(e) => handleNavClick(e, '#contact')}
+          >
+            Contact
+          </a>
+        </li>
+        
       </ul>
     </nav>
   );

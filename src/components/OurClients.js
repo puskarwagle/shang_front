@@ -4,6 +4,7 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useState, useEffect } from "react";
 import axios from 'axios';
+import ourClientsImage from '../images/lapC.jpg';
 
 function OurClients() {
   const [ourClients, setOurClients] = useState([])
@@ -28,9 +29,9 @@ function OurClients() {
   };
 
   const items = ourClients.map((ourClient) => (
-    <div key={ourClient.id} className="item px-5 d-flex flex-column" data-value="1">
-      <img className="border mb-3" src={require(`../../../shang_auth/public/images/ourClients/${ourClient.imgsrc}`).default} alt={ourClient.imgalt}/>
-      <span className='text-muted text-large'>{ourClient.span}</span>
+    <div key={ourClient.id} className="item d-flex flex-column" data-value="1">
+    <img style={{ height: '10rem', width: '10rem' }} className="border mb-3" src={ourClientsImage} alt={ourClient.imgalt}/>
+      <span style={{fontSize: '1.2rem'}} className='text-muted text-large'>{ourClient.span}</span>
     </div>
   ));
 
@@ -45,10 +46,10 @@ function OurClients() {
   );
 
   return (
-    <div id="ourClients" className="OurClients container">
-      <h1 className='mb-5'>Our Clients</h1>
+    <section id="ourClients" className="OurClients">
+      <h1>Our Clients</h1>
       <Carousel />
-    </div>
+    </section>
   );
 }
 
