@@ -4,7 +4,6 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import ourClientsImage from '../images/lapC.jpg';
 
 function OurClients() {
   const [ourClients, setOurClients] = useState([])
@@ -30,7 +29,7 @@ function OurClients() {
 
   const items = ourClients.map((ourClient) => (
     <div key={ourClient.id} className="item d-flex flex-column" data-value="1">
-    <img style={{ height: '10rem', width: '10rem' }} className="border mb-3" src={ourClientsImage} alt={ourClient.imgalt}/>
+    <img src={`http://127.0.0.1:8000/images/ourClients/${ourClient.imgsrc}`}  style={{ height: '10rem', width: '10rem' }} className="border mb-3" alt={ourClient.imgalt}/>
       <span style={{fontSize: '1.2rem'}} className='text-muted text-large'>{ourClient.span}</span>
     </div>
   ));
@@ -48,7 +47,9 @@ function OurClients() {
   return (
     <section id="ourClients" className="OurClients">
       <h1>Our Clients</h1>
-      <Carousel />
+      <div className="container px-5">
+        <Carousel />
+      </div>
     </section>
   );
 }

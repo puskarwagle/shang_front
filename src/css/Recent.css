@@ -1,14 +1,11 @@
 .RecentWorks .honey {
-  display: flex;
-  flex-wrap: wrap;
-  gap:4vw;
-  justify-content: center;
   width:100%;
 }
 .RecentWorks .honey .rw {
   position: relative;
   box-shadow: 0 0 0.5vw .000;
   border-radius: 1vw;
+  max-width: fit-content;
   overflow:hidden;
 }
 .RecentWorks .honey .rw .imgL {
@@ -46,7 +43,7 @@
   box-shadow: 0 0 15px #000;
 }
 .RecentWorks .honey .rw img {
-  width: 16vw;
+  width: 10rem;
   aspect-ratio: 1/1;
   flex-basis: 33.33%;
 }

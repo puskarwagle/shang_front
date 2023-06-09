@@ -1,12 +1,54 @@
-import React from 'react';
+// import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../css/App.css';
 import shangLogo from "../images/newSH1.png";
-import { IoIosArrowDown } from 'react-icons/io';
+import HeaderServices from './HeaderServices';
+import HeaderProducts from './HeaderProducts';
+// import { IoIosArrowDown } from 'react-icons/io';
 
 function Header() {
+  // headerProducts
+  const [isExpandedApp, setIsExpandedApp] = useState(false);
+  const accordionRefApp = useRef(null);
+  const buttonRefApp = useRef(null);
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutsideApp);
+    return () => {
+      document.removeEventListener('click', handleClickOutsideApp);
+    };
+  }, []);
+  const handleClickOutsideApp = (event) => {
+    if (accordionRefApp.current && !accordionRefApp.current.contains(event.target) && !buttonRefApp.current.contains(event.target)) {
+      setIsExpandedApp(false);
+    }
+  };
+  const toggleHeadPPApp = (e) => {
+    e.stopPropagation();
+    setIsExpandedApp(!isExpandedApp);
+  };
+
+  // headerServices
+  const [isExpandedSak, setIsExpandedSak] = useState(false);
+  const accordionRefSak = useRef(null);
+  const buttonRefSak = useRef(null);
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutsideSak);
+    return () => {
+      document.removeEventListener('click', handleClickOutsideSak);
+    };
+  }, []);
+  const handleClickOutsideSak = (event) => {
+    if (accordionRefSak.current && !accordionRefSak.current.contains(event.target) && !buttonRefSak.current.contains(event.target)) {
+      setIsExpandedSak(false);
+    }
+  };
+  const toggleHeadPPSak = (e) => {
+    e.stopPropagation();
+    setIsExpandedSak(!isExpandedSak);
+  };
   return (
-    <nav className="Header navbar navbar-expand-lg navbar-light bg-light px-3">
-      <a className="navbar-brand" href="#">
+    <nav className="Header navbar navbar-expand-lg navbar-light bg-light px-3 border-bottom">
+      <a className="navbar-brand align-self-top" href="#">
         <img src={shangLogo} width="50" height="30" alt={'official shangrila logo'}></img>
       </a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,12 +62,33 @@ function Header() {
           <li className="nav-item">
             <a className="nav-link" href="#">About</a>
           </li>
+
+          {/* headerProduct */}
           <li className="nav-item">
-            <a className="nav-link" href="#">Products <IoIosArrowDown/></a>
+            <div className="accorPPP" onClick={toggleHeadPPApp} ref={buttonRefApp}>
+              <a className="nav-link" href="#">
+                Products
+              </a>
+            </div>
+
+            <div id="headPP" className={`${isExpandedApp ? 'showPP' : 'hidePP'}`} ref={accordionRefApp}>
+                <HeaderProducts/>
+            </div>
           </li>
+
+          {/* headerServices */}
           <li className="nav-item">
-            <a className="nav-link" href="#">Service <IoIosArrowDown/></a>
+            <div className="accorSSS" onClick={toggleHeadPPSak} ref={buttonRefSak}>
+              <a className="nav-link" href="#">
+                Services
+              </a>
+            </div>
+
+            <div id="headSS" className={`${isExpandedSak ? 'showSS' : 'hideSS'}`} ref={accordionRefSak}>
+                <HeaderServices/>
+            </div>
           </li>
+
           <li className="nav-item">
             <a className="nav-link" href="#">Contact</a>
           </li>

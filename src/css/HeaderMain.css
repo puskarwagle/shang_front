@@ -1,0 +1,63 @@
+/* headerMain */
+.headerMain {
+  display: flex;
+  background-color: hsl(208, 100%, 97%);
+  width:100%;
+  min-height: 60vh;
+  max-height: 80vh;
+  color: #1e1d1d;
+  z-index: 99999999999;
+}
+.headerMain .hMA li:hover {
+  background-color: hsl(208, 100%, 94%);
+  cursor:pointer;
+}
+.headerMain .hMA li.hmaactive {
+  background-color: hsl(208, 100%, 94%);
+}
+.headerMain .hMB {
+  flex-wrap: wrap;
+  overflow-x:unset;
+  overflow-y: scroll;
+}
+.headerMain .hMB::-webkit-scrollbar {
+  display: none;
+}
+.hMB:first-of-type {
+  display: flex;
+}
+.hMB.hmbActive {
+  display: flex;
+}
+.hMB.hmbPassive {
+  display: none;
+}
+
+.headerMain .hMB .hMBFirst {
+  display: inline-flex;
+  flex-direction: column;
+  gap:1vw;
+  width:100%;
+  padding: 3vw 0 1vw 2vw;
+}
+.headerMain .hMB .hMBFirst span:nth-child(1) {
+  font-weight: 600;
+}
+.headerMain .hMB .hMBTexts {
+  display: flex;
+  flex-wrap: wrap;
+}
+.headerMain .hMB .hMBText {
+  display: flex;
+  flex-direction: column;
+  gap:0.5vw;
+  width:calc(50% - 1vw);
+  padding:1vw 2vw;
+}
+.headerMain .hMB .hMBText:hover {
+  background-color: var(--c-white);
+  color:#000;
+}
+.headerMain .hMB .hMBText span:nth-child(1) {
+  font-weight: 600;
+}

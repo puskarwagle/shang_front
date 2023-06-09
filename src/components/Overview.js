@@ -2,7 +2,6 @@ import '../css/App.css';
 import React, { useState } from 'react';
 import { useEffect } from "react";
 import axios from 'axios';
-import overviewImage from '../images/overview/co3.jpg';
 
 function Overviews() {
   const [overviews, setOverviews] = useState([]);
@@ -59,17 +58,17 @@ function Overviews() {
       {overviews.map((overview) => (
         <div
           key={overview.id}
-          className={`inOverview d-flex border ${overview.id === activeOverviewId ? 'active' : 'd-none'}`}
+          className={`inOverview d-flex ${overview.id === activeOverviewId ? 'active' : 'd-none'}`}
         >
-          <div className='col-md-6 col-lg-6 border'>
+          <div className='col-md-6 col-lg-6 px-3'>
             <img
-              src={overviewImage}
+              src={`http://127.0.0.1:8000/images/overview/${overview.imgsrc}`}
               alt={overview.imgalt}
-              style={{ height: '15rem', width: '100%' }}
+              style={{ height: '18rem', width: '100%' }}
               className="img-responsive"
             />
           </div>
-          <div className="col-md-6 col-lg-6 border inOverviewText d-flex flex-column justify-content-around pt-4 px-5">
+          <div className="col-md-6 col-lg-6 inOverviewText d-flex flex-column justify-content-around pt-4 px-5">
             <h4>{ overview.text1 }</h4>
             <span className="mb-4">{ overview.text2 }</span><br/>
             <a href='{ overview.text3 }' className="text-nowrap pe-1 text-decoration-none">{overview.text3}</a>

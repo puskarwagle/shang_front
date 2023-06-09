@@ -12,8 +12,6 @@ import ExploreTech from './components/ExploreTech';
 import RecentWork from './components/RecentWork';
 import OurClients from './components/OurClients';
 import Overview from './components/Overview';
-// import HeaderServices from './components/HeaderServices';
-// import HeaderProducts from './components/HeaderProducts';
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
 
@@ -29,11 +27,9 @@ function App() {
           <OurService/>
           <ExploreTech/>
           <RecentWork/>
-          {/* <HeaderServices/> */}
-          {/* <HeaderProducts/> */}
           <OurClients/>
           <Overview/>
-          < ContactUs />
+          <ContactUs/>
         </article>
       </main>
       <Footer/>

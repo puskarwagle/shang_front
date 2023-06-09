@@ -9,7 +9,7 @@ function ContactUs() {
       <h1>Contact us</h1>
       <div id="cMapForm" className="d-flex justify-content-center flex-md-row flex-sm-row flex-column d-sm-flex-column gap-5">
 
-        <div className="gmap gmap-sm">
+        <div className="gmap gmap-sm col-6">
           <iframe
             title="Embedded Google Maps"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14130.104023293115!2d85.33724784851069!3d27.701041176144106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a383b0d657%3A0xc015b104b0451efa!2sShangrila%20Microsystem!5e0!3m2!1sen!2snp!4v1679909937538!5m2!1sen!2snp&z=10"
@@ -20,7 +20,7 @@ function ContactUs() {
           ></iframe>
         </div>
 
-        <div id="cDetails" className="d-flex flex-column">
+        <div id="cDetails" className="d-flex col-4 flex-column">
           <h5 className="mb-4">Shangrila Microsystem</h5>
           <span style={{ marginBottom: '0.5rem', color: '#4682B4', fontSize: '1rem' }}>Call Us</span>
           <span style={{ marginBottom: '1rem', fontSize: '1rem' }}>+977 - 01 – 4102850, 4102852</span>
