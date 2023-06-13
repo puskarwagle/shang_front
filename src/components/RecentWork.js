@@ -30,7 +30,6 @@ function RecentWorks() {
               <div className="rw col-md-6" key={recentWork.id}>
                 <div className="imgL">
                   <img src={`http://127.0.0.1:8000/images/recentWorks/${recentWork.imgsrc}`} alt={recentWork.imgalt} />
-                  <span>{recentWork.imgsrc}</span>
                   <span>{recentWork.titleA}</span>
                   <span>{recentWork.titleB}</span>
                 </div>
