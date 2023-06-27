@@ -23,11 +23,11 @@ function RecentWorks() {
   return (
     <section id="recentWorks" className="RecentWorks">
       <h1>Our Recent Works</h1>
-      <div className="honey row d-flex flex-wrap gap-3 container px-5">
+      <div className="honey row d-flex flex-wrap justify-content-between container px-5">
         {
           recentWorks.map((recentWork) => {
             return (
-              <div className="rw col-md-6" key={recentWork.id}>
+              <div className="rw col-md-6 mb-5 me-5" key={recentWork.id}>
                 <div className="imgL">
                   <img src={`http://127.0.0.1:8000/images/recentWorks/${recentWork.imgsrc}`} alt={recentWork.imgalt} />
                   <span>{recentWork.titleA}</span>
